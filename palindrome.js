@@ -2,6 +2,9 @@
 
 var isPalindrome = function(x) {
 
+    if(x < 0)
+        return false
+
     let array = x.toString().split('').map(Number)
     let i = 0, j = array.length - 1
 

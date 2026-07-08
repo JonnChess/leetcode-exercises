@@ -1,7 +1,5 @@
-/**
- * @param {string} s
- * @return {number}
- */
+//Given a roman numeral, convert it to an integer.
+
 var romanToInt = function(s) {
 
     // switch (s) {

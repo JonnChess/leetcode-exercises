@@ -1,4 +1,7 @@
-//Given a roman numeral, convert it to an integer.
+/**
+ * @param {string} s
+ * @return {number}
+ */
 
 var valueMap = function(s) {
         switch (s) {
@@ -37,7 +40,7 @@ var romanToInt = function(s) {
     return sum
 };
 
-let result = romanToInt("MCMXCIV")
+let result = romanToInt("XIX")
 console.log(result)
 
 

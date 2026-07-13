@@ -1,28 +1,35 @@
 /**
- * @param {string} s
- * @return {boolean}
+ * @param {string[]} strs
+ * @return {string}
  */
-var isValid = function(s) {
-    const stack = [];
-    const parentheses = '() {} []'
-    let i = 0
+var longestCommonPrefix = function(strs) {
+    let prefix = strs[0]
 
-    for (let i = 0; i < s.length; i++){
-      stack.push(s[i])
+    for (let i = 1; i < strs.length; i++) {
+        let current = strs[i]
 
-      let open = stack[stack.length - 2]
-      let closed = stack[stack.length -1]
+        prefix = checkPrefix(prefix, current)
 
-      let potencialIncluso = open + closed
-
-      if(parentheses.includes(potencialIncluso)) {
-        stack.pop()
-        stack.pop()
-      }
     }
 
-    return stack.length === 0
+    return prefix
 };
 
-console.log(isValid('()'))
+var checkPrefix = function(prefix, current) {
+    let finalPrefix = ""
+
+    for(let i = 0; i < prefix.length && i < current.length; i++) {
+        if(prefix[i] === current[i])
+            finalPrefix += prefix[i]
+        else
+            return finalPrefix
+
+    }
+
+    return finalPrefix
+}
+
+let prefix = longestCommonPrefix(["cir","car"])
+
+console.log(prefix)
 
